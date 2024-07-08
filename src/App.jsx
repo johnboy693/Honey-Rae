@@ -1,3 +1,13 @@
+import { useState } from "react";
+import { getAllTickets } from "./services/ticketService";
+
 export const App = () => {
-  return <div className="welcome">Welcome to your first React Application!</div>
+    const [allTickets, setAllTickets] = useState([])
+
+    getAllTickets().then(ticketsArray => {
+        setAllTickets(ticketsArray)
+        console.log("tickets set!")
+    })
+    
+    return <></>
 }
